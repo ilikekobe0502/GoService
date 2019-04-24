@@ -6,4 +6,13 @@
     android:layout_height="match_parent">
 
 
+    <ImageButton
+        android:id="@+id/imageButton_form_query"
+        android:layout_width="@dimen/_62sdp"
+        android:layout_height="@dimen/_62sdp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_home_icon"
+        android:src="@drawable/ic_form_query"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="53dp" />
 </android.support.constraint.ConstraintLayout>
