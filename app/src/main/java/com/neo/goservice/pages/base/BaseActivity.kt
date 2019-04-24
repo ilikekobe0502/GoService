@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.pages.base
+package com.neo.goservice.pages.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

@@ -1,9 +1,9 @@
-package com.ufistudio.hotelmediabox.utils
+package com.neo.goservice.utils
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.util.Log
-import com.ufistudio.hotelmediabox.R
+import com.neo.goservice.R
 
 object ActivityUtils {
 

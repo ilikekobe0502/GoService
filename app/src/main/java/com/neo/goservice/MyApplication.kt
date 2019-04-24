@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox
+package com.neo.goservice
 
 import android.app.Application
 

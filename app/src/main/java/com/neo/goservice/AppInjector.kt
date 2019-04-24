@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox
+package com.neo.goservice
 
 import android.app.Activity
 import android.app.Application
@@ -6,9 +6,9 @@ import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProviders
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import com.ufistudio.hotelmediabox.repository.Repository
-import com.ufistudio.hotelmediabox.repository.provider.preferences.SharedPreferencesProvider
-import com.ufistudio.hotelmediabox.repository.provider.resource.ResourceProvider
+import com.neo.goservice.repository.Repository
+import com.neo.goservice.repository.provider.preferences.SharedPreferencesProvider
+import com.neo.goservice.repository.provider.resource.ResourceProvider
 
 object AppInjector {
 

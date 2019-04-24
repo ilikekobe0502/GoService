@@ -2,9 +2,9 @@ package com.neo.goservice.pages
 
 import android.os.Bundle
 import com.neo.goservice.R
-import com.ufistudio.hotelmediabox.constants.Page
-import com.ufistudio.hotelmediabox.pages.base.OnPageInteractionListener
-import com.ufistudio.hotelmediabox.pages.base.PaneViewActivity
+import com.neo.goservice.constants.Page
+import com.neo.goservice.pages.base.OnPageInteractionListener
+import com.neo.goservice.pages.base.PaneViewActivity
 
 class MainActivity : PaneViewActivity(), OnPageInteractionListener.Primary {
 

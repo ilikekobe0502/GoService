@@ -1,15 +1,15 @@
-package com.ufistudio.hotelmediabox.constants
+package com.neo.goservice.constants
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import com.ufistudio.hotelmediabox.pages.home.HomeFragment
-import com.ufistudio.hotelmediabox.pages.TemplateFragment
+import com.neo.goservice.pages.home.HomeFragment
+import com.neo.goservice.pages.TemplateFragment
 import java.lang.IllegalArgumentException
 
 object Page {
 
     const val PAGE = "page"
-    const val ARG_PAGE = "com.ufistudio.hotelmediabox.constants.Page.ARG_PAGE"
+    const val ARG_PAGE = "com.neo.goservice.constants.Page.ARG_PAGE"
 
     const val INVALID_PAGE = -1
 

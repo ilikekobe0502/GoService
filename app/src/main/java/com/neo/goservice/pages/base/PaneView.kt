@@ -1,11 +1,11 @@
-package com.ufistudio.hotelmediabox.pages.base
+package com.neo.goservice.pages.base
 
 import android.os.Bundle
 
 abstract class PaneView<T : OnPageInteractionListener.Pane> : InteractionView<T>() {
 
     companion object {
-        val ARG_CONTAINER = "com.ufistudio.hotelmediabox.pages.ARG_CONTAINER";
+        val ARG_CONTAINER = "com.neo.goservice.pages.ARG_CONTAINER";
     }
 
     protected fun switchPage(page: Int, args: Bundle, addToBackStack: Boolean, withAnimation: Boolean = true) {

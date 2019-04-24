@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.utils
+package com.neo.goservice.utils
 
 import android.util.Log
 import com.google.gson.GsonBuilder

@@ -1,8 +1,8 @@
-package com.ufistudio.hotelmediabox.repository
+package com.neo.goservice.repository
 
 import android.app.Application
-import com.ufistudio.hotelmediabox.repository.provider.preferences.SharedPreferencesProvider
-import com.ufistudio.hotelmediabox.repository.remote.RemoteAPI
+import com.neo.goservice.repository.provider.preferences.SharedPreferencesProvider
+import com.neo.goservice.repository.remote.RemoteAPI
 
 class Repository(private var application: Application, private val sharedPreferencesProvider: SharedPreferencesProvider) {
 

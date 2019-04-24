@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.repository.remote
+package com.neo.goservice.repository.remote
 
 import android.content.Context
 import android.os.Build

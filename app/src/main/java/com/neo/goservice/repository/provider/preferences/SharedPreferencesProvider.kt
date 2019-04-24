@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.repository.provider.preferences
+package com.neo.goservice.repository.provider.preferences
 
 import android.app.Application
 import android.content.Context

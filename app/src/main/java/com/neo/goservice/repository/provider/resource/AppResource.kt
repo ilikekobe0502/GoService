@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.repository.provider.resource
+package com.neo.goservice.repository.provider.resource
 
 import android.content.res.Resources
 import android.graphics.drawable.Drawable

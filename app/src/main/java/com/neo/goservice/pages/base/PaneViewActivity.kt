@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.pages.base
+package com.neo.goservice.pages.base
 
 import android.os.Bundle
 import android.support.annotation.IdRes
@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentManager
 import android.text.TextUtils
 import android.util.Log
 import android.util.SparseArray
-import com.ufistudio.hotelmediabox.constants.Page
-import com.ufistudio.hotelmediabox.utils.ActivityUtils
+import com.neo.goservice.constants.Page
+import com.neo.goservice.utils.ActivityUtils
 
 open class PaneViewActivity : BaseActivity(), OnPageInteractionListener.Pane {
 

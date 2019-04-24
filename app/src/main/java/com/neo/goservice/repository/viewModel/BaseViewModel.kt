@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.repository.viewModel
+package com.neo.goservice.repository.viewModel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel

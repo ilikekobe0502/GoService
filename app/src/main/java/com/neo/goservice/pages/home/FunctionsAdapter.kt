@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.pages.home
+package com.neo.goservice.pages.home
 
 import android.content.Context
 import android.support.v4.content.ContextCompat
@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ufistudio.hotelmediabox.R
+import com.neo.goservice.R
 import kotlinx.android.synthetic.main.item_home_functions.view.*
 
 class FunctionsAdapter : RecyclerView.Adapter<FunctionsAdapter.ViewHolder>() {

@@ -1,13 +1,13 @@
-package com.ufistudio.hotelmediabox
+package com.neo.goservice
 
 import android.app.Application
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.ufistudio.hotelmediabox.pages.TemplateFragment
-import com.ufistudio.hotelmediabox.pages.TemplateViewModel
-import com.ufistudio.hotelmediabox.repository.Repository
-import com.ufistudio.hotelmediabox.repository.provider.preferences.SharedPreferencesProvider
-import com.ufistudio.hotelmediabox.repository.provider.resource.ResourceProvider
+import com.neo.goservice.pages.TemplateFragment
+import com.neo.goservice.pages.TemplateViewModel
+import com.neo.goservice.repository.Repository
+import com.neo.goservice.repository.provider.preferences.SharedPreferencesProvider
+import com.neo.goservice.repository.provider.resource.ResourceProvider
 import io.reactivex.disposables.CompositeDisposable
 
 

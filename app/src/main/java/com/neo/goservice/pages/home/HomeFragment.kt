@@ -1,16 +1,13 @@
-package com.ufistudio.hotelmediabox.pages.home
+package com.neo.goservice.pages.home
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ufistudio.hotelmediabox.R
-import com.ufistudio.hotelmediabox.pages.TemplateViewModel
-import com.ufistudio.hotelmediabox.pages.base.InteractionView
-import com.ufistudio.hotelmediabox.pages.base.OnPageInteractionListener
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.neo.goservice.R
+import com.neo.goservice.pages.TemplateViewModel
+import com.neo.goservice.pages.base.InteractionView
+import com.neo.goservice.pages.base.OnPageInteractionListener
 
 class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
 
@@ -29,9 +26,6 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
 
     override fun onStart() {
         super.onStart()
-
-        list_functions.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        list_functions.adapter = mAdapter
 
     }
 }

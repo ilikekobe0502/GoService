@@ -1,4 +1,4 @@
-package com.ufistudio.hotelmediabox.pages.base
+package com.neo.goservice.pages.base
 
 import android.content.Context
 

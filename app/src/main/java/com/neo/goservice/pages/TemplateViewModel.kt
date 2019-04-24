@@ -1,9 +1,9 @@
-package com.ufistudio.hotelmediabox.pages
+package com.neo.goservice.pages
 
 import android.app.Application
 import android.arch.lifecycle.MutableLiveData
-import com.ufistudio.hotelmediabox.repository.Repository
-import com.ufistudio.hotelmediabox.repository.viewModel.BaseViewModel
+import com.neo.goservice.repository.Repository
+import com.neo.goservice.repository.viewModel.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 

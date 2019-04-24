@@ -1,12 +1,12 @@
-package com.ufistudio.hotelmediabox.pages
+package com.neo.goservice.pages
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ufistudio.hotelmediabox.R
-import com.ufistudio.hotelmediabox.pages.base.InteractionView
-import com.ufistudio.hotelmediabox.pages.base.OnPageInteractionListener
+import com.neo.goservice.R
+import com.neo.goservice.pages.base.InteractionView
+import com.neo.goservice.pages.base.OnPageInteractionListener
 
 class TemplateFragment : InteractionView<OnPageInteractionListener.Primary>() {
 
