@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <!-- General -->
+    <color name="black_text_1">#4a4a4a</color>
 
     <!-- Home -->
     <color name="blue_1">#0acffe</color>
@@ -18,4 +20,7 @@
     <color name="cyan_2">#32ccbc</color>
     <color name="purple_1">#3023ae</color>
     <color name="purple_2">#c86dd7</color>
+    <color name="purple_3">#4158d0</color>
+    <color name="purple_4">#c850c0</color>
+    <color name="white30">#4cffffff</color>
 </resources>

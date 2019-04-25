@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">GoService</string>
+
+    <!-- Home -->
+    <string name="home_status">狀態總覽</string>
+    <string name="home_form_query">歷史警報</string>
+    <string name="home_facility_info">工單查詢</string>
+    <string name="home_historical_data">歷史數據</string>
+    <string name="home_historical_alert">設備資訊</string>
+    <string name="home_realtime_info">即時資訊</string>
+    <string name="home_price_evaluate">電費估算</string>
+    <string name="home_notification">通知</string>
+    <string name="home_web">網頁版</string>
 </resources>

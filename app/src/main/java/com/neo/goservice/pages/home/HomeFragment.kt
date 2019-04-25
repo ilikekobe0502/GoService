@@ -1,5 +1,6 @@
 package com.neo.goservice.pages.home
 
+import android.graphics.Point
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.util.Log
@@ -34,9 +35,22 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val paramsCenter = imageView_center.layoutParams as ConstraintLayout.LayoutParams
+
+        //設置大圈圈，因為無法用寫死的方式將元件設在screen外，所以使用相對距離
+        val p: Point = Point()
+        activity?.windowManager?.defaultDisplay?.getSize(p)
+        paramsCenter.marginEnd = (p.x - resources.getDimension(R.dimen._170sdp)).toInt()
+        imageView_center.layoutParams = paramsCenter
+
+    }
+
     override fun onStart() {
         super.onStart()
     }
+
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
         val X = event?.x // 觸控的 X 軸位置
         val Y = event?.y // 觸控的 Y 軸位置
@@ -75,6 +89,10 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
                 }
             }
             MotionEvent.ACTION_MOVE -> {
+                val paramsStatus = imageButton_status.layoutParams as ConstraintLayout.LayoutParams
+                paramsStatus.circleConstraint = R.id.imageView_center
+                paramsStatus.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+
                 val paramsFromQuery = imageButton_form_query.layoutParams as ConstraintLayout.LayoutParams
                 paramsFromQuery.circleConstraint = R.id.imageView_center
                 paramsFromQuery.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
@@ -87,53 +105,56 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
                 paramsHistoricalAlert.circleConstraint = R.id.imageView_center
                 paramsHistoricalAlert.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
 
-                val paramsHistoricalAlert2 = imageButton_historical_alert2.layoutParams as ConstraintLayout.LayoutParams
-                paramsHistoricalAlert2.circleConstraint = R.id.imageView_center
-                paramsHistoricalAlert2.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                val paramsRealtimeInfo = imageButton_realtime_info.layoutParams as ConstraintLayout.LayoutParams
+                paramsRealtimeInfo.circleConstraint = R.id.imageView_center
+                paramsRealtimeInfo.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
 
-                val paramsHistoricalAlert3 = imageButton_historical_alert3.layoutParams as ConstraintLayout.LayoutParams
-                paramsHistoricalAlert3.circleConstraint = R.id.imageView_center
-                paramsHistoricalAlert3.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                val paramsPriceEvaluate = imageButton_price_evaluate.layoutParams as ConstraintLayout.LayoutParams
+                paramsPriceEvaluate.circleConstraint = R.id.imageView_center
+                paramsPriceEvaluate.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
 
-                val paramsHistoricalAlert4 = imageButton_historical_alert4.layoutParams as ConstraintLayout.LayoutParams
-                paramsHistoricalAlert4.circleConstraint = R.id.imageView_center
-                paramsHistoricalAlert4.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                val paramsNotification = imageButton_notification.layoutParams as ConstraintLayout.LayoutParams
+                paramsNotification.circleConstraint = R.id.imageView_center
+                paramsNotification.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
 
                 val paramsHistoricalData = imageButton_historical_data.layoutParams as ConstraintLayout.LayoutParams
                 paramsHistoricalData.circleConstraint = R.id.imageView_center
                 paramsHistoricalData.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
 
-                val paramsHistoricalStatus = imageButton_historical_status.layoutParams as ConstraintLayout.LayoutParams
-                paramsHistoricalStatus.circleConstraint = R.id.imageView_center
-                paramsHistoricalStatus.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                val paramsWeb = imageButton_Web.layoutParams as ConstraintLayout.LayoutParams
+                paramsWeb.circleConstraint = R.id.imageView_center
+                paramsWeb.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
                 if (event.y < mLastY) {
+                    paramsStatus.circleAngle = (paramsStatus.circleAngle + MOVE_ANGLE)
                     paramsFromQuery.circleAngle = (paramsFromQuery.circleAngle + MOVE_ANGLE)
                     paramsFacilityInfo.circleAngle = (paramsFacilityInfo.circleAngle + MOVE_ANGLE)
                     paramsHistoricalAlert.circleAngle = (paramsHistoricalAlert.circleAngle + MOVE_ANGLE)
-                    paramsHistoricalAlert2.circleAngle = (paramsHistoricalAlert2.circleAngle + MOVE_ANGLE)
-                    paramsHistoricalAlert3.circleAngle = (paramsHistoricalAlert3.circleAngle + MOVE_ANGLE)
-                    paramsHistoricalAlert4.circleAngle = (paramsHistoricalAlert4.circleAngle + MOVE_ANGLE)
+                    paramsRealtimeInfo.circleAngle = (paramsRealtimeInfo.circleAngle + MOVE_ANGLE)
+                    paramsPriceEvaluate.circleAngle = (paramsPriceEvaluate.circleAngle + MOVE_ANGLE)
+                    paramsNotification.circleAngle = (paramsNotification.circleAngle + MOVE_ANGLE)
                     paramsHistoricalData.circleAngle = (paramsHistoricalData.circleAngle + MOVE_ANGLE)
-                    paramsHistoricalStatus.circleAngle = (paramsHistoricalStatus.circleAngle + MOVE_ANGLE)
+                    paramsWeb.circleAngle = (paramsWeb.circleAngle + MOVE_ANGLE)
                 } else {
+                    paramsStatus.circleAngle = (paramsStatus.circleAngle - MOVE_ANGLE)
                     paramsFromQuery.circleAngle = (paramsFromQuery.circleAngle - MOVE_ANGLE)
                     paramsFacilityInfo.circleAngle = (paramsFacilityInfo.circleAngle - MOVE_ANGLE)
                     paramsHistoricalAlert.circleAngle = (paramsHistoricalAlert.circleAngle - MOVE_ANGLE)
-                    paramsHistoricalAlert2.circleAngle = (paramsHistoricalAlert2.circleAngle - MOVE_ANGLE)
-                    paramsHistoricalAlert3.circleAngle = (paramsHistoricalAlert3.circleAngle - MOVE_ANGLE)
-                    paramsHistoricalAlert4.circleAngle = (paramsHistoricalAlert4.circleAngle - MOVE_ANGLE)
+                    paramsRealtimeInfo.circleAngle = (paramsRealtimeInfo.circleAngle - MOVE_ANGLE)
+                    paramsPriceEvaluate.circleAngle = (paramsPriceEvaluate.circleAngle - MOVE_ANGLE)
+                    paramsNotification.circleAngle = (paramsNotification.circleAngle - MOVE_ANGLE)
                     paramsHistoricalData.circleAngle = (paramsHistoricalData.circleAngle - MOVE_ANGLE)
-                    paramsHistoricalStatus.circleAngle = (paramsHistoricalStatus.circleAngle - MOVE_ANGLE)
+                    paramsWeb.circleAngle = (paramsWeb.circleAngle - MOVE_ANGLE)
                 }
 
+                imageButton_status.layoutParams = paramsStatus
                 imageButton_form_query.layoutParams = paramsFromQuery
                 imageButton_facility_info.layoutParams = paramsFacilityInfo
                 imageButton_historical_alert.layoutParams = paramsHistoricalAlert
-                imageButton_historical_alert2.layoutParams = paramsHistoricalAlert2
-                imageButton_historical_alert3.layoutParams = paramsHistoricalAlert3
-                imageButton_historical_alert4.layoutParams = paramsHistoricalAlert4
+                imageButton_realtime_info.layoutParams = paramsRealtimeInfo
+                imageButton_price_evaluate.layoutParams = paramsPriceEvaluate
+                imageButton_notification.layoutParams = paramsNotification
                 imageButton_historical_data.layoutParams = paramsHistoricalData
-                imageButton_historical_status.layoutParams = paramsHistoricalStatus
+                imageButton_Web.layoutParams = paramsWeb
 
                 mLastY = event.y
             }

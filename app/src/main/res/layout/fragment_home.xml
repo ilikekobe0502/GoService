@@ -3,97 +3,108 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <ImageView
-        android:id="@+id/imageView_center"
-        android:layout_width="@dimen/_186sdp"
-        android:layout_height="@dimen/_186sdp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="244dp"
-        android:background="@drawable/oval_home_center_purple"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    android:background="@drawable/rectangle_home_bg">
 
 
     <ImageButton
-        android:id="@+id/imageButton_historical_status"
+        android:id="@+id/imageButton_status"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_green"
-        android:src="@drawable/ic_status"
+        android:background="@drawable/ic_status"
         app:layout_constraintCircle="@+id/imageView_center"
+        app:layout_constraintCircleRadius="@dimen/_143sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_status"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_status"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_status" />
+
+    <ImageButton
+        android:id="@+id/imageButton_historical_alert"
+        android:layout_width="@dimen/_62sdp"
+        android:layout_height="@dimen/_62sdp"
+        android:background="@drawable/ic_history_alert"
+        app:layout_constraintCircle="@+id/imageView_center"
+        app:layout_constraintCircleAngle="40"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <ImageButton
         android:id="@+id/imageButton_form_query"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_blue"
-        android:src="@drawable/ic_form_query"
+        android:background="@drawable/ic_form_query"
         app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="90"
-        app:layout_constraintCircleRadius="@dimen/_143sdp" />
-
-    <ImageButton
-        android:id="@+id/imageButton_facility_info"
-        android:layout_width="@dimen/_62sdp"
-        android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_cyan_blue"
-        android:src="@drawable/ic_facility_info"
-        app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleAngle="80"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <ImageButton
         android:id="@+id/imageButton_historical_data"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_orange"
-        android:src="@drawable/ic_historical_data"
+        android:background="@drawable/ic_form_query"
         app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="135"
+        app:layout_constraintCircleAngle="120"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <ImageButton
-        android:id="@+id/imageButton_historical_alert"
+        android:id="@+id/imageButton_facility_info"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_pink"
-        android:src="@drawable/ic_history_alert"
+        android:background="@drawable/ic_facility_info"
         app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleAngle="160"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <ImageButton
-        android:id="@+id/imageButton_historical_alert2"
+        android:id="@+id/imageButton_notification"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_pink"
-        android:src="@drawable/ic_history_alert"
+        android:background="@drawable/ic_notification"
         app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="315"
+        app:layout_constraintCircleAngle="200"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <ImageButton
-        android:id="@+id/imageButton_historical_alert3"
+        android:id="@+id/imageButton_realtime_info"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_pink"
-        android:src="@drawable/ic_history_alert"
+        android:background="@drawable/ic_history_alert"
         app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleAngle="240"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <ImageButton
-        android:id="@+id/imageButton_historical_alert4"
+        android:id="@+id/imageButton_price_evaluate"
         android:layout_width="@dimen/_62sdp"
         android:layout_height="@dimen/_62sdp"
-        android:background="@drawable/oval_home_icon_pink"
-        android:src="@drawable/ic_history_alert"
+        android:background="@drawable/ic_price_evaluate"
         app:layout_constraintCircle="@+id/imageView_center"
-        app:layout_constraintCircleAngle="225"
+        app:layout_constraintCircleAngle="280"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
+
+    <ImageButton
+        android:id="@+id/imageButton_Web"
+        android:layout_width="@dimen/_62sdp"
+        android:layout_height="@dimen/_62sdp"
+        android:background="@drawable/ic_history_alert"
+        app:layout_constraintCircle="@+id/imageView_center"
+        app:layout_constraintCircleAngle="320"
+        app:layout_constraintCircleRadius="@dimen/_143sdp" />
+
+    <ImageView
+        android:id="@+id/imageView_center"
+        android:layout_width="@dimen/_186sdp"
+        android:layout_height="@dimen/_186sdp"
+        android:layout_marginTop="@dimen/_214sdp"
+        android:background="@drawable/oval_home_center_purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
