@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
+import android.widget.TextView
 import com.neo.goservice.R
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlin.math.log
 
 
 class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
@@ -37,24 +40,15 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val paramsCenter = imageView_center.layoutParams as ConstraintLayout.LayoutParams
-
-        //設置大圈圈，因為無法用寫死的方式將元件設在screen外，所以使用相對距離
-        val p: Point = Point()
-        activity?.windowManager?.defaultDisplay?.getSize(p)
-        paramsCenter.marginEnd = (p.x - resources.getDimension(R.dimen._170sdp)).toInt()
-        imageView_center.layoutParams = paramsCenter
-
+        initView()
     }
 
     override fun onStart() {
         super.onStart()
+        initMainMenu()
     }
 
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-        val X = event?.x // 觸控的 X 軸位置
-        val Y = event?.y // 觸控的 Y 軸位置
-
         when (event?.action) {
             MotionEvent.ACTION_DOWN -> {
                 downX = event.x
@@ -92,58 +86,72 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
                 val paramsStatus = imageButton_status.layoutParams as ConstraintLayout.LayoutParams
                 paramsStatus.circleConstraint = R.id.imageView_center
                 paramsStatus.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_status, textView_status, imageButton_status.left / 2 > 0)
 
                 val paramsFromQuery = imageButton_form_query.layoutParams as ConstraintLayout.LayoutParams
                 paramsFromQuery.circleConstraint = R.id.imageView_center
                 paramsFromQuery.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_form_query, textView_form_query, imageButton_form_query.left / 2 > 0)
 
                 val paramsFacilityInfo = imageButton_facility_info.layoutParams as ConstraintLayout.LayoutParams
                 paramsFacilityInfo.circleConstraint = R.id.imageView_center
                 paramsFacilityInfo.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_facility_info, textView_facility_info, imageButton_facility_info.left / 2 > 0)
 
                 val paramsHistoricalAlert = imageButton_historical_alert.layoutParams as ConstraintLayout.LayoutParams
                 paramsHistoricalAlert.circleConstraint = R.id.imageView_center
                 paramsHistoricalAlert.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_historical_alert, textView_historical_alert, imageButton_historical_alert.left / 2 > 0)
 
                 val paramsRealtimeInfo = imageButton_realtime_info.layoutParams as ConstraintLayout.LayoutParams
                 paramsRealtimeInfo.circleConstraint = R.id.imageView_center
                 paramsRealtimeInfo.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_realtime_info, textView_realtime_info, imageButton_realtime_info.left / 2 > 0)
 
                 val paramsPriceEvaluate = imageButton_price_evaluate.layoutParams as ConstraintLayout.LayoutParams
                 paramsPriceEvaluate.circleConstraint = R.id.imageView_center
                 paramsPriceEvaluate.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_price_evaluate, textView_price_evaluate, imageButton_price_evaluate.left / 2 > 0)
 
                 val paramsNotification = imageButton_notification.layoutParams as ConstraintLayout.LayoutParams
                 paramsNotification.circleConstraint = R.id.imageView_center
                 paramsNotification.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_notification, textView_notification, imageButton_notification.left / 2 > 0)
 
                 val paramsHistoricalData = imageButton_historical_data.layoutParams as ConstraintLayout.LayoutParams
                 paramsHistoricalData.circleConstraint = R.id.imageView_center
                 paramsHistoricalData.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
+                setViewDisplay(imageButton_historical_data, textView_historical_data, imageButton_historical_data.left / 2 > 0)
 
                 val paramsWeb = imageButton_Web.layoutParams as ConstraintLayout.LayoutParams
                 paramsWeb.circleConstraint = R.id.imageView_center
                 paramsWeb.circleRadius = resources.getDimension(R.dimen._143sdp).toInt()
-                if (event.y < mLastY) {
-                    paramsStatus.circleAngle = (paramsStatus.circleAngle + MOVE_ANGLE)
-                    paramsFromQuery.circleAngle = (paramsFromQuery.circleAngle + MOVE_ANGLE)
-                    paramsFacilityInfo.circleAngle = (paramsFacilityInfo.circleAngle + MOVE_ANGLE)
-                    paramsHistoricalAlert.circleAngle = (paramsHistoricalAlert.circleAngle + MOVE_ANGLE)
-                    paramsRealtimeInfo.circleAngle = (paramsRealtimeInfo.circleAngle + MOVE_ANGLE)
-                    paramsPriceEvaluate.circleAngle = (paramsPriceEvaluate.circleAngle + MOVE_ANGLE)
-                    paramsNotification.circleAngle = (paramsNotification.circleAngle + MOVE_ANGLE)
-                    paramsHistoricalData.circleAngle = (paramsHistoricalData.circleAngle + MOVE_ANGLE)
-                    paramsWeb.circleAngle = (paramsWeb.circleAngle + MOVE_ANGLE)
-                } else {
-                    paramsStatus.circleAngle = (paramsStatus.circleAngle - MOVE_ANGLE)
-                    paramsFromQuery.circleAngle = (paramsFromQuery.circleAngle - MOVE_ANGLE)
-                    paramsFacilityInfo.circleAngle = (paramsFacilityInfo.circleAngle - MOVE_ANGLE)
-                    paramsHistoricalAlert.circleAngle = (paramsHistoricalAlert.circleAngle - MOVE_ANGLE)
-                    paramsRealtimeInfo.circleAngle = (paramsRealtimeInfo.circleAngle - MOVE_ANGLE)
-                    paramsPriceEvaluate.circleAngle = (paramsPriceEvaluate.circleAngle - MOVE_ANGLE)
-                    paramsNotification.circleAngle = (paramsNotification.circleAngle - MOVE_ANGLE)
-                    paramsHistoricalData.circleAngle = (paramsHistoricalData.circleAngle - MOVE_ANGLE)
-                    paramsWeb.circleAngle = (paramsWeb.circleAngle - MOVE_ANGLE)
+                setViewDisplay(imageButton_Web, textView_Web, imageButton_Web.left > 0)
+
+                when {
+                    event.y < mLastY -> {
+                        paramsStatus.circleAngle = (paramsStatus.circleAngle - MOVE_ANGLE)
+                        paramsFromQuery.circleAngle = (paramsFromQuery.circleAngle - MOVE_ANGLE)
+                        paramsFacilityInfo.circleAngle = (paramsFacilityInfo.circleAngle - MOVE_ANGLE)
+                        paramsHistoricalAlert.circleAngle = (paramsHistoricalAlert.circleAngle - MOVE_ANGLE)
+                        paramsRealtimeInfo.circleAngle = (paramsRealtimeInfo.circleAngle - MOVE_ANGLE)
+                        paramsPriceEvaluate.circleAngle = (paramsPriceEvaluate.circleAngle - MOVE_ANGLE)
+                        paramsNotification.circleAngle = (paramsNotification.circleAngle - MOVE_ANGLE)
+                        paramsHistoricalData.circleAngle = (paramsHistoricalData.circleAngle - MOVE_ANGLE)
+                        paramsWeb.circleAngle = (paramsWeb.circleAngle - MOVE_ANGLE)
+                    }
+                    event.y > mLastY -> {
+                        paramsStatus.circleAngle = (paramsStatus.circleAngle + MOVE_ANGLE)
+                        paramsFromQuery.circleAngle = (paramsFromQuery.circleAngle + MOVE_ANGLE)
+                        paramsFacilityInfo.circleAngle = (paramsFacilityInfo.circleAngle + MOVE_ANGLE)
+                        paramsHistoricalAlert.circleAngle = (paramsHistoricalAlert.circleAngle + MOVE_ANGLE)
+                        paramsRealtimeInfo.circleAngle = (paramsRealtimeInfo.circleAngle + MOVE_ANGLE)
+                        paramsPriceEvaluate.circleAngle = (paramsPriceEvaluate.circleAngle + MOVE_ANGLE)
+                        paramsNotification.circleAngle = (paramsNotification.circleAngle + MOVE_ANGLE)
+                        paramsHistoricalData.circleAngle = (paramsHistoricalData.circleAngle + MOVE_ANGLE)
+                        paramsWeb.circleAngle = (paramsWeb.circleAngle + MOVE_ANGLE)
+                    }
+                    else -> return false
                 }
 
                 imageButton_status.layoutParams = paramsStatus
@@ -160,5 +168,41 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
             }
         }
         return super.onTouch(v, event)
+    }
+
+    private fun initView() {
+        val paramsCenter = imageView_center.layoutParams as ConstraintLayout.LayoutParams
+
+        //設置大圈圈，因為無法用寫死的方式將元件設在screen外，所以使用相對距離
+        val p: Point = Point()
+        activity?.windowManager?.defaultDisplay?.getSize(p)
+        paramsCenter.marginEnd = (p.x - resources.getDimension(R.dimen._170sdp)).toInt()
+        imageView_center.layoutParams = paramsCenter
+    }
+
+    private fun initMainMenu() {
+
+
+        //init out of round icon
+        imageButton_status.post { setViewDisplay(imageButton_status, textView_status, imageButton_status.left / 2 > 0) }
+        imageButton_form_query.post { setViewDisplay(imageButton_form_query, textView_form_query, imageButton_form_query.left / 2 > 0) }
+        imageButton_facility_info.post { setViewDisplay(imageButton_facility_info, textView_facility_info, imageButton_facility_info.left / 2 > 0) }
+        imageButton_historical_alert.post { setViewDisplay(imageButton_historical_alert, textView_historical_alert, imageButton_historical_alert.left / 2 > 0) }
+        imageButton_realtime_info.post { setViewDisplay(imageButton_realtime_info, textView_realtime_info, imageButton_realtime_info.left / 2 > 0) }
+        imageButton_price_evaluate.post { setViewDisplay(imageButton_price_evaluate, textView_price_evaluate, imageButton_price_evaluate.left / 2 > 0) }
+        imageButton_notification.post { setViewDisplay(imageButton_notification, textView_notification, imageButton_notification.left / 2 > 0) }
+        imageButton_historical_data.post { setViewDisplay(imageButton_historical_data, textView_historical_data, imageButton_historical_data.left / 2 > 0) }
+        imageButton_Web.post { setViewDisplay(imageButton_Web, textView_Web, imageButton_Web.left / 2 > 0) }
+    }
+
+    private fun setViewDisplay(view1: ImageView, view2: TextView, show: Boolean = true) {
+        Log.d("neo", "show $show")
+        if (show) {
+            view1.visibility = View.VISIBLE
+            view2.visibility = View.VISIBLE
+        } else {
+            view1.visibility = View.INVISIBLE
+            view2.visibility = View.INVISIBLE
+        }
     }
 }

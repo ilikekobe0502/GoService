@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rectangle_home_bg">
-
-
+    
     <ImageButton
         android:id="@+id/imageButton_status"
         android:layout_width="@dimen/_62sdp"
@@ -16,6 +15,7 @@
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
     <TextView
+        android:id="@+id/textView_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
@@ -35,6 +35,18 @@
         app:layout_constraintCircleAngle="40"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
+    <TextView
+        android:id="@+id/textView_historical_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_historical_alert"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_historical_alert"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_historical_alert" />
+
     <ImageButton
         android:id="@+id/imageButton_form_query"
         android:layout_width="@dimen/_62sdp"
@@ -43,6 +55,18 @@
         app:layout_constraintCircle="@+id/imageView_center"
         app:layout_constraintCircleAngle="80"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
+
+    <TextView
+        android:id="@+id/textView_form_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_form_query"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_form_query"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_form_query" />
 
     <ImageButton
         android:id="@+id/imageButton_historical_data"
@@ -53,6 +77,18 @@
         app:layout_constraintCircleAngle="120"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
+    <TextView
+        android:id="@+id/textView_historical_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_historical_data"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_historical_data"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_historical_data" />
+
     <ImageButton
         android:id="@+id/imageButton_facility_info"
         android:layout_width="@dimen/_62sdp"
@@ -61,6 +97,18 @@
         app:layout_constraintCircle="@+id/imageView_center"
         app:layout_constraintCircleAngle="160"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
+
+    <TextView
+        android:id="@+id/textView_facility_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_facility_info"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_facility_info"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_facility_info" />
 
     <ImageButton
         android:id="@+id/imageButton_notification"
@@ -71,6 +119,18 @@
         app:layout_constraintCircleAngle="200"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
+    <TextView
+        android:id="@+id/textView_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_notification"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_notification"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_notification" />
+
     <ImageButton
         android:id="@+id/imageButton_realtime_info"
         android:layout_width="@dimen/_62sdp"
@@ -79,6 +139,18 @@
         app:layout_constraintCircle="@+id/imageView_center"
         app:layout_constraintCircleAngle="240"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
+
+    <TextView
+        android:id="@+id/textView_realtime_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_realtime_info"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_realtime_info"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_realtime_info" />
 
     <ImageButton
         android:id="@+id/imageButton_price_evaluate"
@@ -89,6 +161,17 @@
         app:layout_constraintCircleAngle="280"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
+    <TextView
+        android:id="@+id/textView_price_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_price_evaluate"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_price_evaluate"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_price_evaluate" />
 
     <ImageButton
         android:id="@+id/imageButton_Web"
@@ -99,6 +182,18 @@
         app:layout_constraintCircleAngle="320"
         app:layout_constraintCircleRadius="@dimen/_143sdp" />
 
+    <TextView
+        android:id="@+id/textView_Web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/home_web"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_19ssp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_Web"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_Web" />
+
     <ImageView
         android:id="@+id/imageView_center"
         android:layout_width="@dimen/_186sdp"
@@ -107,4 +202,13 @@
         android:background="@drawable/oval_home_center_purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/_137sdp"
+        android:layout_height="@dimen/_33sdp"
+        android:layout_marginStart="@dimen/_9sdp"
+        android:src="@drawable/banner_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_center" />
 </android.support.constraint.ConstraintLayout>
