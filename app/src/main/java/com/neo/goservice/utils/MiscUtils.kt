@@ -1,7 +1,13 @@
 package com.neo.goservice.utils
 
+import android.content.Context
 import android.util.Log
 import com.google.gson.GsonBuilder
+import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
+import android.support.v4.content.ContextCompat.getSystemService
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+
 
 object MiscUtils {
 
@@ -29,4 +35,12 @@ object MiscUtils {
             return ArrayList()
     }
 
+    fun checkContextIsNull(context: Context?): Boolean {
+        return context == null
+    }
+
+    fun showSoftInput(context: Context?, view: EditText) {
+        val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+        imm!!.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
+    }
 }

@@ -8,14 +8,14 @@ import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import com.neo.goservice.R
+import com.neo.goservice.constants.Page
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlin.math.log
 
 
-class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
-
+class HomeFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnClickListener {
     private lateinit var mViewModel: HomeViewModel
     private val MOVE_ANGLE: Int = 5 //移動的角度
     var mCenterX = 0
@@ -170,18 +170,23 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
         return super.onTouch(v, event)
     }
 
+    override fun onClick(v: View?) {
+        //TODO 根據不同的icon要到不同頁面
+        getInteractionListener().switchPage(R.id.fragment_container, Page.LOGIN, Bundle(), true, true)
+    }
+
+
     private fun initView() {
         val paramsCenter = imageView_center.layoutParams as ConstraintLayout.LayoutParams
 
         //設置大圈圈，因為無法用寫死的方式將元件設在screen外，所以使用相對距離
         val p: Point = Point()
         activity?.windowManager?.defaultDisplay?.getSize(p)
-        paramsCenter.marginEnd = (p.x - resources.getDimension(R.dimen._170sdp)).toInt()
+        paramsCenter.marginEnd = (p.x - resources.getDimension(R.dimen._154sdp)).toInt()
         imageView_center.layoutParams = paramsCenter
     }
 
     private fun initMainMenu() {
-
 
         //init out of round icon
         imageButton_status.post { setViewDisplay(imageButton_status, textView_status, imageButton_status.left / 2 > 0) }
@@ -193,6 +198,16 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>() {
         imageButton_notification.post { setViewDisplay(imageButton_notification, textView_notification, imageButton_notification.left / 2 > 0) }
         imageButton_historical_data.post { setViewDisplay(imageButton_historical_data, textView_historical_data, imageButton_historical_data.left / 2 > 0) }
         imageButton_Web.post { setViewDisplay(imageButton_Web, textView_Web, imageButton_Web.left / 2 > 0) }
+
+        imageButton_status.setOnClickListener(this)
+        imageButton_form_query.setOnClickListener(this)
+        imageButton_facility_info.setOnClickListener(this)
+        imageButton_historical_alert.setOnClickListener(this)
+        imageButton_realtime_info.setOnClickListener(this)
+        imageButton_price_evaluate.setOnClickListener(this)
+        imageButton_notification.setOnClickListener(this)
+        imageButton_historical_data.setOnClickListener(this)
+        imageButton_Web.setOnClickListener(this)
     }
 
     private fun setViewDisplay(view1: ImageView, view2: TextView, show: Boolean = true) {

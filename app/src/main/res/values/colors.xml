@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#512da8</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#673ab7</color>
 
     <!-- General -->
     <color name="black_text_1">#4a4a4a</color>
@@ -23,4 +23,14 @@
     <color name="purple_3">#4158d0</color>
     <color name="purple_4">#c850c0</color>
     <color name="white30">#4cffffff</color>
+
+    <!-- Login -->
+    <color name="black20">#33000000</color>
+    <color name="black30">#4c000000</color>
+    <color name="black87">#de000000</color>
+    <color name="pink_3">#fdc097</color>
+    <color name="pink_4">#ffa5a5</color>
+    <color name="pink_5">#f798a6</color>
+
+
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rectangle_home_bg">
-    
+
     <ImageButton
         android:id="@+id/imageButton_status"
         android:layout_width="@dimen/_62sdp"
@@ -196,8 +196,8 @@
 
     <ImageView
         android:id="@+id/imageView_center"
-        android:layout_width="@dimen/_186sdp"
-        android:layout_height="@dimen/_186sdp"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_170sdp"
         android:layout_marginTop="@dimen/_214sdp"
         android:background="@drawable/oval_home_center_purple"
         app:layout_constraintEnd_toEndOf="parent"
