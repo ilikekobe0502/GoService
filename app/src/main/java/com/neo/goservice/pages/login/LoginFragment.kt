@@ -9,20 +9,31 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.*
 import android.widget.ArrayAdapter
+import android.widget.SpinnerAdapter
 import android.widget.TextView
+import com.neo.goservice.AppInjector
 import com.neo.goservice.R
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
 import com.neo.goservice.utils.MiscUtils
 import kotlinx.android.synthetic.main.fragment_login.*
 
-class LoginFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnFocusChangeListener, View.OnClickListener {
+class LoginFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnFocusChangeListener,
+        View.OnClickListener {
     private lateinit var mViewModel: LoginViewModel
     private var mPasswordIsShow: Boolean = false
 
     companion object {
         fun newInstance(): LoginFragment = LoginFragment()
         private val TAG = LoginFragment::class.simpleName
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mViewModel = AppInjector.obtainViewModel(this)
+        mViewModel.initLoginError
+        mViewModel.initLoginSuccess
+        mViewModel.initLoginProgress
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -45,9 +56,10 @@ class LoginFragment : InteractionView<OnPageInteractionListener.Primary>(), View
         if (!MiscUtils.checkContextIsNull(context)) {
             MiscUtils.showSoftInput(context, editText_account)
             val spinnerAdapter: ArrayAdapter<String> = ArrayAdapter(context!!, R.layout.view_lang_dorpdown, R.id.text, LanguageEnum.getTitle(context!!))
-            spinner_lang.adapter = spinnerAdapter
+            spinner_lang.adapter = spinnerAdapter as SpinnerAdapter?
         }
         imageView_switch_password.setOnClickListener(this)
+        button_login.setOnClickListener(this)
     }
 
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
@@ -93,6 +105,9 @@ class LoginFragment : InteractionView<OnPageInteractionListener.Primary>(), View
                     mPasswordIsShow = true
                 }
                 editText_password.setSelection(editText_password.text.length)
+            }
+            R.id.button_login -> {
+                mViewModel.login(editText_account.text.toString(), editText_password.text.toString())
             }
         }
     }

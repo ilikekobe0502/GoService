@@ -6,6 +6,7 @@
 
     <!-- General -->
     <color name="black_text_1">#4a4a4a</color>
+    <color name="withe20">#33FFFEFE</color>
 
     <!-- Home -->
     <color name="blue_1">#0acffe</color>

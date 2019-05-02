@@ -1,6 +1,7 @@
 package com.neo.goservice.utils
 
 import android.content.Context
+import android.net.wifi.WifiManager
 import android.util.Log
 import com.google.gson.GsonBuilder
 import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
@@ -39,8 +40,25 @@ object MiscUtils {
         return context == null
     }
 
+    /**
+     * 顯示軟鍵盤
+     * @context
+     * @view: EditText View
+     */
     fun showSoftInput(context: Context?, view: EditText) {
         val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm!!.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
+    }
+
+    /**
+     * Get IP address
+     * @context
+     *
+     * @return IP address
+     */
+    fun getIpAddress(context: Context): String {
+        val ip: Int = (context.getSystemService(Context.WIFI_SERVICE) as WifiManager).connectionInfo.ipAddress
+
+        return ip.toString()
     }
 }
