@@ -27,6 +27,7 @@
 
     <!-- Login -->
     <color name="black20">#33000000</color>
+    <color name="black25">#40000000</color>
     <color name="black30">#4c000000</color>
     <color name="black87">#de000000</color>
     <color name="pink_3">#fdc097</color>
