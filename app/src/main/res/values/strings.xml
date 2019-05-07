@@ -34,4 +34,27 @@
     <string name="login_forget_password">忘記密碼</string>
     <string name="login_forget_input_message">請輸入郵件地址</string>
 
+    <!-- Price Evaluate -->
+    <string name="price_evaluate_query_time_default">選擇查詢時段</string>
+    <string name="price_evaluate_query_currency_default">貨幣選擇</string>
+    <string name="price_evaluate_running_time">運轉時數</string>
+    <string name="price_evaluate_empty_car">空車 %d％</string>
+    <string name="price_evaluate_full_car">重車 %d％</string>
+    <string name="price_evaluate_empty_car_item">空車</string>
+    <string name="price_evaluate_full_car_item">重車</string>
+    <array name="price_evaluate_times">
+        <item>0700~0900</item>
+        <item>1000~1200</item>
+        <item>1300~1500</item>
+        <item>1600~1700</item>
+        <item>1800~1900</item>
+    </array>
+    <array name="price_evaluate_coins">
+        <item>TWD</item>
+        <item>JP</item>
+        <item>US</item>
+        <item>HK</item>
+        <item>NK</item>
+    </array>
+
 </resources>
