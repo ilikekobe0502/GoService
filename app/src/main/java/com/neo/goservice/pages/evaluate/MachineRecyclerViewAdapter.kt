@@ -8,7 +8,7 @@ import com.neo.goservice.R
 
 class MachineRecyclerViewAdapter : RecyclerView.Adapter<MachineRecyclerViewAdapter.ViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        val view: View = LayoutInflater.from(p0.context).inflate(R.layout.item_machine, p0, false)
+        val view: View = LayoutInflater.from(p0.context).inflate(R.layout.item_price_evaluate_machine, p0, false)
         return ViewHolder(view)
     }
 

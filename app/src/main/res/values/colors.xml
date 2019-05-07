@@ -7,6 +7,7 @@
     <!-- General -->
     <color name="black_text_1">#4a4a4a</color>
     <color name="withe20">#33FFFEFE</color>
+    <color name="withe50">#80ffffff</color>
 
     <!-- Home -->
     <color name="blue_1">#0acffe</color>
@@ -27,6 +28,8 @@
 
     <!-- Login -->
     <color name="black20">#33000000</color>
+    <color name="black40">#66000000</color>
+    <color name="black25">#40000000</color>
     <color name="black30">#4c000000</color>
     <color name="black87">#de000000</color>
     <color name="pink_3">#fdc097</color>
