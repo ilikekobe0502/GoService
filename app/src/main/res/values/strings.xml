@@ -50,4 +50,7 @@
         <item>@string/status_abnormal</item>
         <item>@string/status_jump_off</item>
     </array>
+
+    <!-- Notification -->
+    <string name="notification_tag_to_read"><u>全部標為已讀</u></string>
 </resources>

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import com.neo.goservice.pages.home.HomeFragment
 import com.neo.goservice.pages.TemplateFragment
 import com.neo.goservice.pages.login.LoginFragment
+import com.neo.goservice.pages.notification.NotificationFragment
 import com.neo.goservice.pages.status.StatusFragment
 import java.lang.IllegalArgumentException
 
@@ -19,6 +20,7 @@ object Page {
     const val HOME = 1001
     const val LOGIN = 1002
     const val STATUS = 1003
+    const val NOTIFICATION = 1004
 
     /*--------------------------------------------------------------------------------------------*/
     /* Helpers */
@@ -32,6 +34,7 @@ object Page {
             HOME -> result = HomeFragment.newInstance()
             LOGIN -> result = LoginFragment.newInstance()
             STATUS -> result = StatusFragment.newInstance()
+            NOTIFICATION -> result = NotificationFragment.newInstance()
             else -> throw IllegalArgumentException("No match view! page = $page")
         }
 

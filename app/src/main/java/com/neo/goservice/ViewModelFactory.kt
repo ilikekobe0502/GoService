@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProvider
 import com.neo.goservice.pages.TemplateFragment
 import com.neo.goservice.pages.TemplateViewModel
 import com.neo.goservice.pages.login.LoginViewModel
+import com.neo.goservice.pages.notification.NotificationViewModel
 import com.neo.goservice.pages.status.StatusViewModel
 import com.neo.goservice.repository.Repository
 import com.neo.goservice.repository.provider.preferences.SharedPreferencesProvider
@@ -28,6 +29,7 @@ class ViewModelFactory(private val application: Application,
                 isAssignableFrom(TemplateFragment::class.java) -> TemplateViewModel(application, CompositeDisposable(), repository)
                 isAssignableFrom(LoginViewModel::class.java) -> LoginViewModel(application, CompositeDisposable(), repository)
                 isAssignableFrom(StatusViewModel::class.java) -> StatusViewModel(application, CompositeDisposable(), repository)
+                isAssignableFrom(NotificationViewModel::class.java) -> NotificationViewModel(application, CompositeDisposable(), repository)
                 else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             } as T
         }

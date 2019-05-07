@@ -5,7 +5,7 @@
     android:layout_height="@dimen/_111sdp"
     android:layout_marginEnd="@dimen/_5sdp"
     android:layout_marginBottom="@dimen/_5sdp"
-    android:background="@drawable/rectangle_general_bg">
+    android:background="@drawable/rectangle_general_radius4_bg">
 
     <TextView
         android:id="@+id/textView_title"

@@ -35,3 +35,18 @@ data class Facilities(
 data class Machines(
         var name: String
 )
+
+/*
+    Notifications
+ */
+data class Notifications(
+        var notifications: ArrayList<Content>? = ArrayList()
+)
+
+data class Content(
+        var title: String = "",
+        var message: String = "",
+        var time: String = "",
+        var read: Int = 0,
+        var expend: Int = 0
+)

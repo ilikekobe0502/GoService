@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/_8sdp"
-    android:background="@drawable/rectangle_general_bg"
+    android:background="@drawable/rectangle_general_radius4_bg"
     android:paddingBottom="@dimen/_10sdp">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/layout_title"
-        android:background="@drawable/rectangle_general_bg"
+        android:background="@drawable/rectangle_general_radius4_bg"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_32sdp"
         app:layout_constraintEnd_toEndOf="parent"
