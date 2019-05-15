@@ -171,8 +171,31 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>(), View.
     }
 
     override fun onClick(v: View?) {
-        //TODO 根據不同的icon要到不同頁面
-        getInteractionListener().switchPage(R.id.fragment_container, Page.LOGIN, Bundle(), true, true)
+        var page: Int = Page.LOGIN
+        when (v?.id) {
+            R.id.imageButton_status -> {
+                page = Page.STATUS
+            }
+            R.id.imageButton_form_query -> {
+            }
+            R.id.imageButton_facility_info -> {
+                page = Page.FACILITIES_INFO
+            }
+            R.id.imageButton_historical_alert -> {
+            }
+            R.id.imageButton_realtime_info -> {
+            }
+            R.id.imageButton_price_evaluate -> {
+            }
+            R.id.imageButton_notification -> {
+                page = Page.NOTIFICATION
+            }
+            R.id.imageButton_historical_data -> {
+            }
+            R.id.imageButton_Web -> {
+            }
+        }
+        getInteractionListener().switchPage(R.id.fragment_container, page, Bundle(), true, true)
     }
 
 
