@@ -5,15 +5,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/rectangle_home_bg">
 
-    <ImageView
+    <include
         android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_56sdp"
-        android:src="@drawable/rectangle_general_radius4_bg"
+        layout="@layout/view_tool_bar_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"

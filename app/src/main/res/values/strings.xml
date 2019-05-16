@@ -62,7 +62,14 @@
     <string name="facilities_info_area">區域：%s</string>
     <string name="facilities_info_name">別名：%s</string>
     <string name="facilities_info_engineer">設備工程師：%s</string>
-    <array name="Facilities_tab_title_array">
+    <string name="facilities_info_sort_dialog_title">選擇分類依據方式</string>
+    <array name="facilities_info_sort_dialog_array">
+        <item>@string/facilities_info_effective_time</item>
+        <item>@string/facilities_info_warranty_time_start</item>
+        <item>@string/facilities_info_warranty_time_end</item>
+    </array>
+
+    <array name="facilities_info_tab_title_array">
         <item>空壓機</item>
         <item>附掛設備</item>
     </array>

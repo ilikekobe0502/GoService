@@ -32,7 +32,7 @@ class FacilitiesInfoPagerAdapter(val mContent: Context, val mFm: FragmentManager
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return mContent.resources.getStringArray(R.array.Facilities_tab_title_array)[position]
+        return mContent.resources.getStringArray(R.array.facilities_info_tab_title_array)[position]
     }
 
     fun setData(data: FacilitiesContent?) {
