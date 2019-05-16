@@ -21,6 +21,37 @@ data class Role(
 )
 
 /*
+    Price Evaluate
+ */
+data class PriceEvaluate(
+        var price_evaluate: PriceEvaluateData
+)
+
+data class PriceEvaluateData(
+        var machine: ArrayList<Machine> = ArrayList(),
+        var total_info: TotalInfo?,
+        var car_full_info: CarFullInfo?
+)
+
+data class Machine(
+        var name: String? = "",
+        var car_empty: String? = "",
+        var car_full: String? = ""
+)
+
+data class TotalInfo(
+        var price: Int = 0,
+        var car_empty: Int = 0,
+        var car_full: Int = 0
+)
+
+data class CarFullInfo(
+        var hour: Int = 0,
+        var whtt: Int = 0,
+        var price: Int = 0
+)
+
+/*
     Status
  */
 data class Status(

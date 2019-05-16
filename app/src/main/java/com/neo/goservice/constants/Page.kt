@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import com.neo.goservice.pages.home.HomeFragment
 import com.neo.goservice.pages.TemplateFragment
 import com.neo.goservice.pages.facilities_info.FacilitiesInfoFragment
+import com.neo.goservice.pages.evaluate.PriceEvaluateFragment
 import com.neo.goservice.pages.login.LoginFragment
 import com.neo.goservice.pages.notification.NotificationFragment
 import com.neo.goservice.pages.status.StatusFragment
@@ -23,6 +24,7 @@ object Page {
     const val STATUS = 1003
     const val NOTIFICATION = 1004
     const val FACILITIES_INFO = 1005
+    const val PRICE_EVALUATE = 1005
 
     /*--------------------------------------------------------------------------------------------*/
     /* Helpers */
@@ -38,6 +40,7 @@ object Page {
             STATUS -> result = StatusFragment.newInstance()
             NOTIFICATION -> result = NotificationFragment.newInstance()
             FACILITIES_INFO -> result = FacilitiesInfoFragment.newInstance()
+            PRICE_EVALUATE -> result = PriceEvaluateFragment.newInstance()
             else -> throw IllegalArgumentException("No match view! page = $page")
         }
 
