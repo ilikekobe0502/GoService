@@ -1,7 +1,6 @@
 package com.neo.goservice.repository.data
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
 
 /*
@@ -81,3 +80,33 @@ data class Content(
         var read: Int = 0,
         var expend: Int = 0
 )
+
+
+/*
+    Facilities info
+ */
+data class FacilitiesInfo(
+        var facilities: FacilitiesContent
+) : Serializable
+
+data class FacilitiesContent(
+        var air_compressor: ArrayList<AirCompressor>,
+        var accessory: Accessory
+) : Serializable
+
+data class AirCompressor(
+        var title: String,
+        var description: String,
+        var effective_time: String,
+        var warranty_time_start: String,
+        var warranty_time_end: String,
+        var model: String,
+        var area: String,
+        var name: String,
+        var engineer: String,
+        var show: Boolean = false//用來表示是否顯示擴張畫面的tag
+) : Serializable
+
+data class Accessory(
+        var title: String
+) : Serializable

@@ -2,20 +2,21 @@ package com.neo.goservice.pages.facilities_info
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.support.design.widget.TabLayout
 import android.view.*
 import com.neo.goservice.AppInjector
 import com.neo.goservice.R
 import com.neo.goservice.interfaces.ViewModelCallbackListener
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
+import com.neo.goservice.repository.data.FacilitiesInfo
 import kotlinx.android.synthetic.main.fragment_device_info.*
 
 class FacilitiesInfoFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnFocusChangeListener,
         View.OnClickListener, ViewModelCallbackListener {
     private lateinit var mViewModel: FacilitiesInfoViewModel
 
-//    private var mData: Notifications? = null
+    private var mData: FacilitiesInfo? = null
+    private var mAdapter: FacilitiesInfoPagerAdapter? = null
 
     companion object {
         fun newInstance(): FacilitiesInfoFragment = FacilitiesInfoFragment()
@@ -25,9 +26,9 @@ class FacilitiesInfoFragment : InteractionView<OnPageInteractionListener.Primary
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mViewModel = AppInjector.obtainViewModel(this)
-        mViewModel.getDeviceInfoError.observe(this, Observer { })
+        mViewModel.getDeviceInfoError.observe(this, Observer { onError(it) })
         mViewModel.getDeviceInfoSuccess.observe(this, Observer { onSuccess(it) })
-        mViewModel.getDeviceInfoProgress.observe(this, Observer { })
+        mViewModel.getDeviceInfoProgress.observe(this, Observer { onProgress(it) })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -57,7 +58,7 @@ class FacilitiesInfoFragment : InteractionView<OnPageInteractionListener.Primary
     }
 
     override fun onSuccess(it: Any?) {
-//        mData = it as Notifications?
+        mData = it as FacilitiesInfo?
         renderData()
     }
 
@@ -70,11 +71,12 @@ class FacilitiesInfoFragment : InteractionView<OnPageInteractionListener.Primary
     }
 
     private fun renderView() {
+        mAdapter = context?.let { fragmentManager?.let { it1 -> FacilitiesInfoPagerAdapter(it, it1) } }
         tab_layout.setupWithViewPager(viewPager)
-        viewPager.adapter = fragmentManager?.let { FacilitiesInfoPagerAdapter(it) }
+        viewPager.adapter = mAdapter
     }
 
     private fun renderData() {
-
+        mAdapter?.setData(mData?.facilities)
     }
 }

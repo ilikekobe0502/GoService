@@ -62,6 +62,10 @@
     <string name="facilities_info_area">區域：%s</string>
     <string name="facilities_info_name">別名：%s</string>
     <string name="facilities_info_engineer">設備工程師：%s</string>
+    <array name="Facilities_tab_title_array">
+        <item>空壓機</item>
+        <item>附掛設備</item>
+    </array>
 
     <!-- Price Evaluate -->
     <string name="price_evaluate_query_time_default">選擇查詢時段</string>

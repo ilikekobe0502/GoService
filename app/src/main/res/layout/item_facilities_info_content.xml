@@ -68,7 +68,6 @@
         android:text="@string/facilities_info_effective_time"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_14ssp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView_title"
         app:layout_constraintTop_toTopOf="@+id/textView3" />
 
@@ -135,7 +134,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView_warranty_time_start" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_extend"
         android:layout_width="@dimen/_24sdp"
         android:layout_height="@dimen/_24sdp"
         android:layout_marginTop="@dimen/_12sdp"

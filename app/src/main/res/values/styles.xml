@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyTabsText" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
 </resources>

@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
 import com.neo.goservice.R
-import com.neo.goservice.interfaces.ViewModelCallbackListener
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
+import com.neo.goservice.repository.data.AirCompressor
 import kotlinx.android.synthetic.main.fragment_device_info_content.*
 
 class ContentFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnFocusChangeListener,
-        View.OnClickListener, ViewModelCallbackListener {
+        View.OnClickListener {
 
-//    private var mData: Notifications? = null
+    private var mData: ArrayList<AirCompressor> = ArrayList()
+    private val mAdapter: ContentRecyclerViewAdapter = ContentRecyclerViewAdapter()
 
     companion object {
         fun newInstance(): ContentFragment = ContentFragment()
@@ -21,6 +22,9 @@ class ContentFragment : InteractionView<OnPageInteractionListener.Primary>(), Vi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (arguments?.get(TAG_ARG) is ArrayList<*>) {
+            mData.addAll(arguments?.get(TAG_ARG) as Collection<AirCompressor>)
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -35,6 +39,7 @@ class ContentFragment : InteractionView<OnPageInteractionListener.Primary>(), Vi
 
     override fun onStart() {
         super.onStart()
+        renderData()
     }
 
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
@@ -49,24 +54,12 @@ class ContentFragment : InteractionView<OnPageInteractionListener.Primary>(), Vi
         }
     }
 
-    override fun onSuccess(it: Any?) {
-//        mData = it as Notifications?
-        renderData()
-    }
-
-    override fun onError(t: Throwable?) {
-
-    }
-
-    override fun onProgress(b: Boolean?) {
-
-    }
-
     private fun renderView() {
         recyclerView_content.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        recyclerView_content.adapter = ContentRecyclerViewAdapter()
+        recyclerView_content.adapter = mAdapter
     }
 
     private fun renderData() {
+        mAdapter.setData(mData)
     }
 }
