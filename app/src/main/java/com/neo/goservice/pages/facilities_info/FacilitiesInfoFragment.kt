@@ -3,9 +3,7 @@ package com.neo.goservice.pages.facilities_info
 import android.app.AlertDialog
 import android.arch.lifecycle.Observer
 import android.content.DialogInterface
-import android.graphics.Rect
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import com.neo.goservice.AppInjector
 import com.neo.goservice.R
@@ -13,7 +11,7 @@ import com.neo.goservice.interfaces.ViewModelCallbackListener
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
 import com.neo.goservice.repository.data.FacilitiesInfo
-import kotlinx.android.synthetic.main.fragment_device_info.*
+import kotlinx.android.synthetic.main.fragment_facilities_info.*
 import kotlinx.android.synthetic.main.view_tool_bar_title.*
 
 class FacilitiesInfoFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnFocusChangeListener,
@@ -38,7 +36,7 @@ class FacilitiesInfoFragment : InteractionView<OnPageInteractionListener.Primary
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_device_info, container, false)
+        return inflater.inflate(R.layout.fragment_facilities_info, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

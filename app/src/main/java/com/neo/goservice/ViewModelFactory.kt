@@ -9,6 +9,7 @@ import com.neo.goservice.pages.facilities_info.FacilitiesInfoViewModel
 import com.neo.goservice.pages.evaluate.PriceEvaluateViewModel
 import com.neo.goservice.pages.login.LoginViewModel
 import com.neo.goservice.pages.notification.NotificationViewModel
+import com.neo.goservice.pages.realtime_info.RealtimeInfoViewModel
 import com.neo.goservice.pages.status.StatusViewModel
 import com.neo.goservice.repository.Repository
 import com.neo.goservice.repository.provider.preferences.SharedPreferencesProvider
@@ -34,6 +35,7 @@ class ViewModelFactory(private val application: Application,
                 isAssignableFrom(NotificationViewModel::class.java) -> NotificationViewModel(application, CompositeDisposable(), repository)
                 isAssignableFrom(FacilitiesInfoViewModel::class.java) -> FacilitiesInfoViewModel(application, CompositeDisposable(), repository)
                 isAssignableFrom(PriceEvaluateViewModel::class.java) -> PriceEvaluateViewModel(application, CompositeDisposable(), repository)
+                isAssignableFrom(RealtimeInfoViewModel::class.java) -> RealtimeInfoViewModel(application, CompositeDisposable(), repository)
                 else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             } as T
         }

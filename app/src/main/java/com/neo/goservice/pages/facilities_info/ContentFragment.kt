@@ -7,7 +7,7 @@ import com.neo.goservice.R
 import com.neo.goservice.pages.base.InteractionView
 import com.neo.goservice.pages.base.OnPageInteractionListener
 import com.neo.goservice.repository.data.AirCompressor
-import kotlinx.android.synthetic.main.fragment_device_info_content.*
+import kotlinx.android.synthetic.main.fragment_facilities_info_content.*
 
 class ContentFragment : InteractionView<OnPageInteractionListener.Primary>(), View.OnFocusChangeListener,
         View.OnClickListener {
@@ -29,7 +29,7 @@ class ContentFragment : InteractionView<OnPageInteractionListener.Primary>(), Vi
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_device_info_content, container, false)
+        return inflater.inflate(R.layout.fragment_facilities_info_content, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

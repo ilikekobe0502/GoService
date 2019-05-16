@@ -8,6 +8,7 @@ import com.neo.goservice.pages.facilities_info.FacilitiesInfoFragment
 import com.neo.goservice.pages.evaluate.PriceEvaluateFragment
 import com.neo.goservice.pages.login.LoginFragment
 import com.neo.goservice.pages.notification.NotificationFragment
+import com.neo.goservice.pages.realtime_info.RealtimeInfoFragment
 import com.neo.goservice.pages.status.StatusFragment
 import java.lang.IllegalArgumentException
 
@@ -24,7 +25,8 @@ object Page {
     const val STATUS = 1003
     const val NOTIFICATION = 1004
     const val FACILITIES_INFO = 1005
-    const val PRICE_EVALUATE = 1005
+    const val PRICE_EVALUATE = 1006
+    const val REALTIME_INFO = 1007
 
     /*--------------------------------------------------------------------------------------------*/
     /* Helpers */
@@ -41,6 +43,7 @@ object Page {
             NOTIFICATION -> result = NotificationFragment.newInstance()
             FACILITIES_INFO -> result = FacilitiesInfoFragment.newInstance()
             PRICE_EVALUATE -> result = PriceEvaluateFragment.newInstance()
+            REALTIME_INFO -> result = RealtimeInfoFragment.newInstance()
             else -> throw IllegalArgumentException("No match view! page = $page")
         }
 

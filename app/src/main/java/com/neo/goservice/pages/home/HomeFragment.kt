@@ -184,8 +184,10 @@ class HomeFragment : InteractionView<OnPageInteractionListener.Primary>(), View.
             R.id.imageButton_historical_alert -> {
             }
             R.id.imageButton_realtime_info -> {
+                page = Page.REALTIME_INFO
             }
             R.id.imageButton_price_evaluate -> {
+                page = Page.PRICE_EVALUATE
             }
             R.id.imageButton_notification -> {
                 page = Page.NOTIFICATION

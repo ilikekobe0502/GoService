@@ -97,4 +97,12 @@
         <item>NK</item>
     </array>
 
+    <!-- Realtime Info -->
+    <string name="realtime_info_basic_info">基本資料</string>
+    <string name="realtime_info_engineer">設備工程師</string>
+    <string name="realtime_info_facility_area">設備區域</string>
+    <string name="realtime_info_facility_name">設備別名</string>
+    <string name="realtime_info_facility_number">設備制號</string>
+    <string name="realtime_info_model">型號</string>
+
 </resources>
