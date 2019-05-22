@@ -22,7 +22,7 @@ class PriceEvaluateViewModel(
     val getEvaluateProgress = MutableLiveData<Boolean>()
     val getEvaluateError = MutableLiveData<Throwable>()
 
-    val s = "{\"price_evaluate\":{\"machine\":[{\"name\":\"機器1\",\"car_empty\":\"10h\",\"car_full\":\"20h\"},{\"name\":\"機器2\",\"car_empty\":\"5h\",\"car_full\":\"30h\"},{\"name\":\"機器3\",\"car_empty\":\"6h\",\"car_full\":\"10h\"},{\"name\":\"機器4\",\"car_empty\":\"10h\",\"car_full\":\"30h\"}],\"total_info\":{\"price\":\"44000\",\"car_empty\":\"80\",\"car_full\":\"20\"},\"car_full_info\":{\"hour\":\"300\",\"whtt\":\"10000\",\"price\":\"30000\"}}}"
+    val s = "{\"price_evaluate\":{\"machine\":[{\"name\":\"機器1\",\"car_empty\":\"10\",\"car_full\":\"20\"},{\"name\":\"機器2\",\"car_empty\":\"5\",\"car_full\":\"30\"},{\"name\":\"機器3\",\"car_empty\":\"6\",\"car_full\":\"10\"},{\"name\":\"機器4\",\"car_empty\":\"10\",\"car_full\":\"30\"}],\"total_info\":{\"price\":\"44000\",\"car_empty\":\"80\",\"car_full\":\"20\"},\"car_full_info\":{\"hour\":\"300\",\"whtt\":\"10000\",\"price\":\"30000\"}}}"
     val mGson = Gson()
 
     init {

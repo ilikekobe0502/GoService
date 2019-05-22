@@ -56,7 +56,7 @@ class LoginFragment : InteractionView<OnPageInteractionListener.Primary>(), View
         if (!MiscUtils.checkContextIsNull(context)) {
             MiscUtils.showSoftInput(context, editText_account)
             val spinnerAdapter: ArrayAdapter<String> = ArrayAdapter(context!!, R.layout.view_lang_dorpdown, R.id.text, LanguageEnum.getTitle(context!!))
-            spinner_lang.adapter = spinnerAdapter as SpinnerAdapter?
+            spinner_lang.adapter = spinnerAdapter
         }
         imageView_switch_password.setOnClickListener(this)
         button_login.setOnClickListener(this)

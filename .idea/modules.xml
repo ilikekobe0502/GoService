@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GoService.iml" filepath="$PROJECT_DIR$/GoService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MagicLenJSON/MagicLenJSON.iml" filepath="$PROJECT_DIR$/MagicLenJSON/MagicLenJSON.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
