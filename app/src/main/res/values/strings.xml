@@ -6,6 +6,10 @@
     <string name="common_lang_tw">繁體中文</string>
     <string name="common_lang_en">英文</string>
 
+    <!-- Error -->
+    <string name="error_company_list_null">Company list is null</string>
+    <string name="error_undefine">未知錯誤</string>
+
     <!-- Home -->
     <string name="home_status">狀態總覽</string>
     <string name="home_form_query">工單查詢</string>
@@ -33,6 +37,7 @@
     <string name="login_button_login">登入</string>
     <string name="login_forget_password">忘記密碼</string>
     <string name="login_forget_input_message">請輸入郵件地址</string>
+    <string name="login_choose_company_title">選擇欲查看公司</string>
 
     <!-- Status -->
     <string name="status_facilities_title">設備清單</string>

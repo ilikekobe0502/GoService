@@ -36,11 +36,11 @@ class SsoApiClient {
         val client = getOkHttpClient()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(HttpUrl.get(url))
-            .client(client)
+                .baseUrl(HttpUrl.get(url))
+                .client(client)
 //                .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-            .build()
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+                .build()
 
         mService = retrofit.create(SsoApiClientService::class.java)
     }
@@ -49,28 +49,44 @@ class SsoApiClient {
     /*--------------------------------------------------------------------------------------------*/
     /* APIs */
 
-    fun login(email: String, password: String, address: String = "127.0.0.1"): Single<ResponseBody> {
+    fun login(email: String, password: String, address: String, companyId: String = ""): Single<ResponseBody> {
         val body: RequestBody = RequestBody.create(
-            MediaType.parse("application/xml"),
-            "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sso=\"http://sso.fusheng.com/\">\n" +
-                    "   <soapenv:Header/>\n" +
-                    "   <soapenv:Body>\n" +
-                    "      <sso:SingleSignOnWS>\n" +
-                    "         <!--Optional:-->\n" +
-                    "         <applicationId>0</applicationId>\n" +
-                    "         <!--Optional:-->\n" +
-                    "         <companyId>null</companyId>\n" +
-                    "         <!--Optional:-->\n" +
-                    "         <userId>" + email + "</userId>\n" +
-                    "         <!--Optional:-->\n" +
-                    "         <password>" + password + "</password>\n" +
-                    "         <!--Optional:-->\n" +
-                    "         <userIP>" + address + "</userIP>\n" +
-                    "      </sso:SingleSignOnWS>\n" +
-                    "   </soapenv:Body>\n" +
-                    "</soapenv:Envelope>"
+                MediaType.parse("application/xml"),
+                "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sso=\"http://sso.fusheng.com/\">\n" +
+                        "   <soapenv:Header/>\n" +
+                        "   <soapenv:Body>\n" +
+                        "      <sso:SingleSignOnWS>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <applicationId>0</applicationId>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <companyId>$companyId</companyId>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <userId>$email</userId>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <password>$password</password>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <userIP>$address</userIP>\n" +
+                        "      </sso:SingleSignOnWS>\n" +
+                        "   </soapenv:Body>\n" +
+                        "</soapenv:Envelope>"
         )
-
         return mService.login(body)
+    }
+
+    fun ssoLogin(token: String, ip: String): Single<ResponseBody> {
+        val body: RequestBody = RequestBody.create(
+                MediaType.parse("application/xml"),
+                "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sso=\"http://sso.fusheng.com/\">\n" +
+                        "   <soapenv:Header/>\n" +
+                        "   <soapenv:Body>\n" +
+                        "      <sso:VerifySSOToken>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <token>$token</token>\n" +
+                        "         <userIP>$ip</userIP>\n" +
+                        "      </sso:VerifySSOToken>\n" +
+                        "   </soapenv:Body>\n" +
+                        "</soapenv:Envelope>"
+        )
+        return mService.ssoLogin(body)
     }
 }

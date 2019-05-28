@@ -8,6 +8,9 @@ import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
 import android.support.v4.content.ContextCompat.getSystemService
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import java.net.Inet4Address
+import java.net.NetworkInterface
+import java.net.SocketException
 
 
 object MiscUtils {
@@ -56,9 +59,23 @@ object MiscUtils {
      *
      * @return IP address
      */
-    fun getIpAddress(context: Context): String {
-        val ip: Int = (context.getSystemService(Context.WIFI_SERVICE) as WifiManager).connectionInfo.ipAddress
+    fun getIpAddress(): String {
+        try {
+            val enNetI = NetworkInterface.getNetworkInterfaces()
+            while (enNetI.hasMoreElements()) {
+                val netI = enNetI.nextElement()
+                val enumIpAddr = netI.inetAddresses
+                while (enumIpAddr.hasMoreElements()) {
+                    val inetAddress = enumIpAddr.nextElement()
+                    if (inetAddress is Inet4Address && !inetAddress.isLoopbackAddress()) {
+                        return inetAddress.getHostAddress()
+                    }
+                }
+            }
+        } catch (e: SocketException) {
+            Log.e(TAG, "getIpAddress error : $e")
+        }
 
-        return ip.toString()
+        return ""
     }
 }

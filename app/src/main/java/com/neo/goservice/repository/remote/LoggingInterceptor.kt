@@ -3,6 +3,7 @@ package com.neo.goservice.repository.remote
 import android.util.Log
 import okhttp3.Interceptor
 import okhttp3.Response
+import okhttp3.ResponseBody
 
 class LoggingInterceptor : Interceptor {
 
@@ -15,14 +16,18 @@ class LoggingInterceptor : Interceptor {
 
         val t1 = System.nanoTime()
         Log.d(TAG, String.format("Sending request %s on %s%n%s",
-            request?.url(), chain?.connection(), request?.headers()))
+                request?.url(), chain?.connection(), request?.headers()))
 
         val response = chain?.proceed(request)
 
         val t2 = System.nanoTime()
         Log.d(TAG, String.format("Received response for %s in %.1fms%n%s",
-            response?.request()?.url(), (t2 - t1) / 1e6, request?.headers()))
+                response?.request()?.url(), (t2 - t1) / 1e6, request?.headers()))
 
-        return response!!
+
+        val responseString = response?.body()?.string()
+        Log.d(TAG, "Response string = $responseString")
+        return response?.newBuilder()
+                ?.body(ResponseBody.create(response.body()?.contentType(), responseString))?.build()!!
     }
 }

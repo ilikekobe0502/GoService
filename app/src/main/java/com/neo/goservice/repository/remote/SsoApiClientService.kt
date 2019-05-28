@@ -11,4 +11,10 @@ interface SsoApiClientService {
     fun login(
         @Body body: RequestBody
     ): Single<ResponseBody>
+
+    @Headers("Content-Type: application/xml")
+    @POST("AuthService/ws/ssoOther")
+    fun ssoLogin(
+            @Body body: RequestBody
+    ): Single<ResponseBody>
 }

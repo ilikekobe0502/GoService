@@ -2,6 +2,7 @@ package com.neo.goservice.pages.base
 
 import android.os.Bundle
 import android.support.annotation.IdRes
+import com.neo.goservice.helps.NoticeDialogHelper
 
 interface OnPageInteractionListener {
 
@@ -9,6 +10,7 @@ interface OnPageInteractionListener {
         fun pressBack()
         fun showFullScreenLoading()
         fun hideFullScreenOverlay()
+        fun showNoticeDialog(message: String, type: Int = NoticeDialogHelper.TYPE_DEFAULT)
     }
 
     interface Pane : Base {

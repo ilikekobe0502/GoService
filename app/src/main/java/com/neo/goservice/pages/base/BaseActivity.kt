@@ -2,6 +2,7 @@ package com.neo.goservice.pages.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.neo.goservice.helps.NoticeDialogHelper
 
 abstract class BaseActivity : AppCompatActivity(), OnPageInteractionListener.Base {
 
@@ -49,6 +50,10 @@ abstract class BaseActivity : AppCompatActivity(), OnPageInteractionListener.Bas
 //        if (isActivityDestroying() || mFullScreenMessage == null || !mFullScreenMessage?.isShowing()!!)
 //            return
 //        mFullScreenMessage?.dismissAllowingStateLoss()
+    }
+
+    override fun showNoticeDialog(message: String, type: Int) {
+        NoticeDialogHelper.getInstance(baseContext).show(message, type)
     }
 
     /*--------------------------------------------------------------------------------------------*/

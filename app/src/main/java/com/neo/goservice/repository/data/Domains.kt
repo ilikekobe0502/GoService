@@ -8,16 +8,74 @@ import java.io.Serializable
  */
 data class Login(
         var StatusCode: String? = "",
-        var account_id: String? = "",
-        var compay_id: String? = "",
+        var CompanyList: ArrayList<LoginDetail>? = null,
         var last_time_stamp: String? = "",
-        var Token: String? = "",
-        var Role: ArrayList<Role>? = null
-)
+        var Token: String = "",
+        var Role: String? = ""
+) : Serializable
+
+data class LoginDetail(
+        var company_id: String? = "",
+        var company_name: String? = ""
+) : Serializable
+
+data class ReLogin(
+        var StatusCode: String? = "",
+        var CompanyList: ArrayList<LoginDetail>? = null,
+        var last_time_stamp: String? = "",
+        var Token: String = "",
+        var Role: List<Role>? = null,
+        var company_id: String? = "",
+        var account_name: String? = ""
+) : Serializable
+
 
 data class Role(
-        var id: String? = ""
-)
+        var role_id: String = "",
+        var status: String = "",
+        var access_control: String = "",
+        var role_name: String = ""
+) : Serializable
+
+data class LoginVerify(
+        var token_id: String = "",
+        var company_id: String = "",
+        var account_id: String = "",
+        var locale: String = "",
+        var timezone: String = "",
+        var client_ip: String = "",
+        var create_time: Long = 0,
+        var is_invalid: String = "",
+        var system_id: String = "",
+        var StatusCode: String = "",
+        var organization_id: String = "",
+        var display_name: String = "",
+        var first_name: String = "",
+        var last_name: String = "",
+        var email: String = "",
+        var cell_phone: String = "",
+        var work_phone: String = "",
+        var country_name: String = "",
+        var region_id: String = "",
+        var address: String = "",
+        var relationship: String = "",
+        var company_name: String = "",
+        var country_id: String = "",
+        var roles: ArrayList<Roles>? = ArrayList(),
+        var last_time_stamp: String = ""
+) : Serializable
+
+data class Roles(
+        var name: String = "",
+        var system_id: String = "",
+        var role_id: String = "",
+        var role_name: String = "",
+        var role_type: String = "",
+        var account_id: String = "",
+        var org_id: String = "",
+        var company_id: String = "",
+        var is_adm: String = ""
+) : Serializable
 
 /*
     Price Evaluate

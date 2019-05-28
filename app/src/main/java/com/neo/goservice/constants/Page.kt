@@ -16,6 +16,7 @@ object Page {
 
     const val PAGE = "page"
     const val ARG_PAGE = "com.neo.goservice.constants.Page.ARG_PAGE"
+    const val ARG_DATA = "com.neo.goservice.constants.Page.ARG_DATA"
 
     const val INVALID_PAGE = -1
 
